@@ -1,0 +1,101 @@
+body{
+    
+}
+
+a:hover{
+    text-decoration: none;;
+}
+
+.special-button{
+    border-radius:40px; 
+    border:1px solid;
+    padding:12px 50px;
+    color:white;
+    opacity: 0.75;
+}
+.special-button:hover{
+    background-color:#d35400;
+    color:white;
+    border-color:#d35400;
+}
+
+#cursor{
+    font-size:5rem;
+    animation: blink 1s linear infinite alternate;
+}
+
+@keyframes blink{
+    50%{
+        opacity:0;
+    }
+    100%{
+        opacity:1;
+    }
+}
+
+#nav-logo{
+    color: black;
+}
+#nav-logo:hover{
+    background: linear-gradient(90deg,#333333,#03a9f4,#f441a5,#feeb3b,#C4E538,#4cd137,#8111ff,#a97467,#A3CB38,#03a9f4);
+    background-size: 500%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: animate_gradian 4s linear infinite alternate;
+}
+
+@keyframes animate_gradian{
+    0%{
+        background-position: 0%;
+    }
+    100%{
+        background-position: 100%;
+    }
+}
+
+.fog-overlay{
+    position: absolute;
+    z-index: 3;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0.42;
+    background-image: url('../images/fog5.gif'); 
+    background-size:cover;
+}
+
+#fortuneButton{    
+    background: linear-gradient(90deg,#03a9f4,#f441a5,#feeb3b,#03a9f4);
+    background-size: 500%;
+    color:white;
+    border:none;
+    border-radius: 50px;
+    font-size: 22px;
+    padding:10px 25px;
+    margin-top:25px;
+}
+#fortuneButton:focus {outline:0;}
+#fortuneButton:hover{    
+    animation: animate_gradian 4s linear infinite;
+   
+}
+#fortuneButton:before{
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 35%;
+    right: 35%;
+    bottom: -10px;
+    z-index: -1;
+    background: linear-gradient(90deg,#03a9f4,#f441a5,#feeb3b,#03a9f4);
+    background-size: 500%;
+    border-radius:40px;
+    opacity: 0;
+    transition: 0.5s;
+}
+#fortuneButton:hover:before{
+    filter:blur(15px);
+    opacity:1;
+    animation: animate_gradian 4s linear infinite;
+}
