@@ -180,7 +180,7 @@ public class AuthenticationFilter implements Filter {
                         return;
                     } else {
                         req.setAttribute("errorMsg", "Invalid username and password");
-                        req.("login.jsp");
+                        resp.sendRedirect("login.jsp");
                         return;
                     }
                 } else {

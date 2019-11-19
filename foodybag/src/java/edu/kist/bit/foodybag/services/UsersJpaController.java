@@ -20,6 +20,7 @@ import edu.kist.bit.foodybag.services.exceptions.IllegalOrphanException;
 import edu.kist.bit.foodybag.services.exceptions.NonexistentEntityException;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
+import javax.persistence.NoResultException;
 
 /**
  *
@@ -316,7 +317,7 @@ public class UsersJpaController implements Serializable {
             result = (Users) em.createNamedQuery("Users.findByEmail")
                 .setParameter("email", email)
                 .getSingleResult();
-        } catch (NullPointerException e) {
+        } catch (NullPointerException | NoResultException e) {
             throw new NonexistentEntityException("The users with email: " + email + " no longer exists.");
         }
         return result;
